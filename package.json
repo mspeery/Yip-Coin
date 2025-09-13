@@ -1,0 +1,43 @@
+{
+  "name": "yipcoin",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install || true",
+    "clean": "rimraf artifacts cache coverage typechain-types",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "lint": "eslint . --ext .ts --max-warnings 0",
+    "format": "prettier --write .",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "deploy:anvil": "hardhat run scripts/deploy.ts --network hardhat",
+    "verify": "hardhat verify --network sepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.12",
+    "chai": "^4.4.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "hardhat": "^2.22.6",
+    "hardhat-gas-reporter": "^1.0.10",
+    "husky": "^9.1.6",
+    "mocha": "^10.4.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "solidity-coverage": "^0.8.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "ethers": "^6.13.1"
+  }
+}
